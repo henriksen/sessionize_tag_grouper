@@ -28,16 +28,16 @@ static Dictionary<string, Dictionary<string, int>> GroupSessionsByMainTag(List<S
     {
         foreach (var session in group.Sessions.Where(s => s.Status != "Declined" && s.Status != "Decline_Queue"))
         {
-            var hasDesiredCategory = session.Categories
-                .Any(c => c.CategoryItems.Any(ci => ci.Name == "Session (60 min)" || ci.Name == "Geek Out (60 Min)" || ci.Name == "Keynote (60 min)"));
+            // var hasDesiredCategory = session.Categories
+            //     .Any(c => c.CategoryItems.Any(ci => ci.Name == "Session (60 min)" || ci.Name == "Geek Out (60 Min)" || ci.Name == "Keynote (60 min)"));
 
-            if (!hasDesiredCategory)
-            {
-                continue; // Skip this session if it doesn't match the category or status criteria
-            }
+            // if (!hasDesiredCategory)
+            // {
+            //     continue; // Skip this session if it doesn't match the category or status criteria
+            // }
 
             var mainTag = session.Categories
-                .FirstOrDefault(c => c.Id == 67576)?.CategoryItems.FirstOrDefault()?.Name;
+                .FirstOrDefault(c => c.Id == 68414)?.CategoryItems.FirstOrDefault()?.Name;
 
             if (mainTag != null)
             {
